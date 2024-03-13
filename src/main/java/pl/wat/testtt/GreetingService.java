@@ -30,4 +30,9 @@ public class GreetingService {
         double m = ft*0.3048;
         return new Foot_to_meters(ft, m);
     }
+
+    public Meters_to_foot m_to_ft(double m) {
+        double ft = m/0.3048;
+        return new Meters_to_foot(m, ft);
+    }
 }

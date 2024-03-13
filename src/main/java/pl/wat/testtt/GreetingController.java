@@ -30,4 +30,9 @@ public class GreetingController {
     public Foot_to_meters foot_to_meteres(@RequestParam(value = "ft", defaultValue = "1") double ft) {
         return greetingService.ft_to_m(ft);
     }
+
+    @GetMapping("/m_to_ft")
+    public Meters_to_foot meters_to_foot(@RequestParam(value = "m", defaultValue = "1") double m) {
+        return greetingService.m_to_ft(m);
+    }
 }

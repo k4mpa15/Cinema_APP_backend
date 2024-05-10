@@ -1,6 +1,7 @@
-package pl.wat.backend;
+package pl.wat.backend.services;
 
 import org.springframework.stereotype.Service;
+import pl.wat.backend.records.Greeting;
 
 import java.util.concurrent.atomic.AtomicLong;
 

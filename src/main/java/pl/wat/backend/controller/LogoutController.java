@@ -16,10 +16,6 @@ public class LogoutController {
     @PostMapping("/logout")
     public String logout(@RequestParam String token) {
 
-        if (token.startsWith("Bearer ")) {
-            token = token.substring(7);
-        }
-
         System.out.println("token: " + token);
         tokenService.invalidateToken(token);
         return "Wylogowano pomyślnie.";

@@ -14,9 +14,10 @@ public class UserPointsController {
     private UserPointsService userPointsService;
 
     @GetMapping("/user/points")
-    public int getUserPoints() {
-        System.out.println("Current points: " + userPointsService.getPoints());
-        return userPointsService.getPoints();
+    public String getUserPoints() {
+        String pointsJson = userPointsService.getPoints();
+        System.out.println("Current points: " + pointsJson);
+        return pointsJson;
     }
 
     @PostMapping("/user/points/add")

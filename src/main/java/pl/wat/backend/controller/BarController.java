@@ -13,7 +13,7 @@ public class BarController {
     @Autowired
     private BarService BarService;
 
-    @GetMapping("/bar")
+    @GetMapping("/prices/bar")
     public Map<String, String> Bar() {
         System.out.println(BarService.generatePrices());
         return BarService.generatePrices();

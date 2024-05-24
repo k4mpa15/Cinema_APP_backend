@@ -13,7 +13,7 @@ public class TicketController {
     @Autowired
     private TicketService TicketService;
 
-    @GetMapping("/ticket")
+    @GetMapping("/prices/ticket")
     public Map<String, String> Ticket() {
         System.out.println(TicketService.generatePrices());
         return TicketService.generatePrices();

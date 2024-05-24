@@ -8,9 +8,9 @@ import java.util.Map;
 @Service
 public class TicketService {
 
-    private String[] categories = {"Normalny", "Ulgowy", "Dla seniora", "Dziecięcy"};
+    private String[] categories = {"Normalny", "Ulgowy", "Dla seniora", "Dzieciecy"};
 
-    private String[] prices = {"30.00 zł", "20.00 zł", "25.00 zł", "15.00 zł"};
+    private String[] prices = {"30.00 zl", "20.00 zl", "25.00 zl", "15.00 zl"};
 
     public Map<String, String> generatePrices() {
         Map<String, String> tickets = new LinkedHashMap<>();

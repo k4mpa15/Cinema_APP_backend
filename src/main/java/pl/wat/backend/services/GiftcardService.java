@@ -9,9 +9,9 @@ import java.util.Map;
 @Service
 public class GiftcardService {
 
-    private static String[] names = {"Standardowa", "VIP", "Dla dzieci", "Dla seniorów" };
+    private static String[] names = {"Standardowa", "VIP", "Dla dzieci", "Dla seniorow" };
 
-    private static String[] prices = {"50.00 zł", "100.00 zł", "25.00 zł", "30.00 zł"};
+    private static String[] prices = {"50.00 zl", "100.00 zl", "25.00 zl", "30.00 zl"};
 
 
     public static Map<String, String> generatePrices() {

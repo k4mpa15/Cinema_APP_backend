@@ -13,7 +13,7 @@ public class RegistrationController {
     private String password;
     private String imie;
     private String nazwisko;
-
+    private String nr_tel;
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(
@@ -21,17 +21,19 @@ public class RegistrationController {
             @RequestParam String password,
             @RequestParam String confirmPassword,
             @RequestParam String imie,
-            @RequestParam String nazwisko
+            @RequestParam String nazwisko,
+            @RequestParam String nr_tel
     ) {
         if (!password.equals(confirmPassword)) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Hasła nie pasują do siebie.");
         }
-        //tu dodamy logike dodawania do bazy - na razie zapisuje to do zmiennych
+
         this.email = email;
         this.password = password;
         this.imie = imie;
         this.nazwisko = nazwisko;
-        System.out.println("okok");
+        this.nr_tel = nr_tel;
+
         return ResponseEntity.status(HttpStatus.CREATED).body("Użytkownik zarejestrowany pomyślnie.");
     }
 }

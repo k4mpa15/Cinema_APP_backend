@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.wat.backend.services.UserHistoryService;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class UserHistoryController {
@@ -16,7 +17,7 @@ public class UserHistoryController {
     private UserHistoryService userHistoryService;
 
     @GetMapping("/user/history")
-    public List<String> getUserHistory() {
+    public Map<String, String> getUserHistory() {
         System.out.println(userHistoryService.getMovieHistory());
         return userHistoryService.getMovieHistory();
     }

@@ -17,7 +17,7 @@ public class UserHistoryController {
     private UserHistoryService userHistoryService;
 
     @GetMapping("/user/history")
-    public Map<String, String> getUserHistory() {
+    public Map<String, Map<String, String>> getUserHistory() {
         System.out.println(userHistoryService.getMovieHistory());
         return userHistoryService.getMovieHistory();
     }

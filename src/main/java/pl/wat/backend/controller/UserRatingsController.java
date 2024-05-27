@@ -16,7 +16,7 @@ public class UserRatingsController {
     private UserRatingsService userRatingsService;
 
     @GetMapping("/user/ratings")
-    public Map<String, Integer> getUserRatings() {
+    public Map<String, Map<String, String>> getUserRatings() {
         System.out.println(userRatingsService.getMovieRatings());
         return userRatingsService.getMovieRatings();
     }

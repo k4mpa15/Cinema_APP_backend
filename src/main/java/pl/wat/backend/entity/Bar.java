@@ -10,12 +10,10 @@ public class Bar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String itemName;
     private Double price;
 
     // Getters and Setters
-
     public Long getId() {
         return id;
     }

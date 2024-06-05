@@ -1,4 +1,4 @@
-package pl.wat.backend.demo.entity;
+package pl.wat.backend.entity;
 
 
 import javax.persistence.Entity;

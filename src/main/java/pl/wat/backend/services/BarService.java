@@ -2,8 +2,8 @@ package pl.wat.backend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.wat.backend.demo.entity.Bar;
-import pl.wat.backend.demo.repository.BarRepository;
+import pl.wat.backend.entity.Bar;
+import pl.wat.backend.repository.BarRepository;
 
 import java.util.LinkedHashMap;
 import java.util.List;

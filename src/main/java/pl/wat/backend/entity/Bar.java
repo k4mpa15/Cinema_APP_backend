@@ -1,9 +1,9 @@
 package pl.wat.backend.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Bar {
@@ -13,7 +13,11 @@ public class Bar {
     private String itemName;
     private Double price;
 
-    // Getters and Setters
+    // Default constructor
+    public Bar() {
+    }
+
+    // Getters and setters
     public Long getId() {
         return id;
     }

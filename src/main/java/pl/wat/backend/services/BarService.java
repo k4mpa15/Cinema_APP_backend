@@ -1,21 +1,25 @@
 package pl.wat.backend.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.wat.backend.demo.entity.Bar;
+import pl.wat.backend.demo.repository.BarRepository;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
 public class BarService {
 
-    private String[] snacks = {"popcorn", "nachos", "sok", "cola"};
+    @Autowired
+    private BarRepository barRepository;
 
-    private String[] prices = {"15.00 zl", "20.00 zl", "5.00 zl", "6.00 zl"};
-
-    public Map<String, String> generatePrices() {
-        Map<String, String> menu = new LinkedHashMap<>();
-        for (int i = 0; i < snacks.length; i++) {
-            menu.put(snacks[i], prices[i]);
+    public Map<String, Double> generatePricesFromDatabase() {
+        List<Bar> bars = barRepository.findAll();
+        Map<String, Double> menu = new LinkedHashMap<>();
+        for (Bar bar : bars) {
+            menu.put(bar.getItemName(), bar.getPrice());
         }
         return menu;
     }

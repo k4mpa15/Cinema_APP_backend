@@ -17,7 +17,11 @@ public class BarService {
 
     public Map<String, Double> generatePricesFromDatabase() {
         List<Bar> bars = barRepository.findAll();
+        for (Bar bar : bars) {
+            System.out.println("Nazwa przedmiotu: " + bar.getItemName() + ", Cena: " + bar.getPrice());
+        }
         Map<String, Double> menu = new LinkedHashMap<>();
+
         for (Bar bar : bars) {
             menu.put(bar.getItemName(), bar.getPrice());
         }

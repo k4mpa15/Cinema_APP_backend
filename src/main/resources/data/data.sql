@@ -20,3 +20,11 @@ INSERT INTO Movie_Rating (email, name, rating, date_added) VALUES
 ('john.doe@example.com', 'Interstellar', 4, CURRENT_TIMESTAMP),
 ('jane.smith@example.com', 'Matrix', 5, CURRENT_TIMESTAMP),
 ('jane.smith@example.com', 'Avengers: Koniec gry', 4, CURRENT_TIMESTAMP);
+
+--tabela history
+
+INSERT INTO Movie_History (email, name, date_added) VALUES
+('john.doe@example.com', 'Incepcja',  CURRENT_TIMESTAMP),
+('john.doe@example.com', 'Interstellar', CURRENT_TIMESTAMP),
+('jane.smith@example.com', 'Matrix',  CURRENT_TIMESTAMP),
+('jane.smith@example.com', 'Avengers: Koniec gry', CURRENT_TIMESTAMP);

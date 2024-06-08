@@ -22,5 +22,10 @@ CREATE TABLE MovieRating (
     rating INT,
     date_added TIMESTAMP
 );
-
+CREATE TABLE MovieHistory (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255),
+    name VARCHAR(255),
+    date_added TIMESTAMP
+);
 mvn spring-boot:run

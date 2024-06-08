@@ -15,10 +15,12 @@ phone VARCHAR(255),
 points INT
 );
 
-CREATE TABLE Ratings (
-id BIGINT AUTO_INCREMENT PRIMARY KEY
-email VARCHAR(255),
-movie VARCHAR(255),
-rating VARCHAR(255),
-)
+CREATE TABLE MovieRating (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255),
+    name VARCHAR(255),
+    rating INT,
+    date_added TIMESTAMP
+);
+
 mvn spring-boot:run

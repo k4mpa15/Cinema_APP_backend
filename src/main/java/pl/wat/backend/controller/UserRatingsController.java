@@ -16,14 +16,12 @@ public class UserRatingsController {
     private UserRatingsService userRatingsService;
 
     @GetMapping("/user/ratings")
-    public Map<String, Map<String, String>> getUserRatings() {
-        System.out.println(userRatingsService.getMovieRatings());
+    public Map<String, Object> getUserRatings() {
         return userRatingsService.getMovieRatings();
     }
 
-    @PostMapping("/user/ratings")
+    @PostMapping("/user/ratings/add")
     public void addUserRating(@RequestParam String movie, @RequestParam int rating) {
         userRatingsService.addRating(movie, rating);
-        System.out.println("Dodano: " + rating + " dla filmu: " + movie);
     }
 }

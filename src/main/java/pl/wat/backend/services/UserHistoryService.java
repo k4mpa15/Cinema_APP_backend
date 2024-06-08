@@ -26,8 +26,8 @@ public class UserHistoryService {
         Map<String, Map<String, String>> historyMap = new LinkedHashMap<>();
         for (int i = 0; i < movieHistory.size(); i++) {
             Map<String, String> movieDetails = new LinkedHashMap<>();
-            movieDetails.put("name", movieHistory.get(i).getName());
-            movieDetails.put("dateAdded", movieHistory.get(i).getDateAdded().toString());
+            movieDetails.put("nazwa", movieHistory.get(i).getName());
+            movieDetails.put("data dodania", movieHistory.get(i).getDateAdded().toString());
             historyMap.put(String.valueOf(i + 1), movieDetails);
         }
         return historyMap;

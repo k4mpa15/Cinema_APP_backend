@@ -24,6 +24,6 @@ public class UserRatingsController {
     @PostMapping("/user/ratings")
     public void addUserRating(@RequestParam String movie, @RequestParam int rating) {
         userRatingsService.addRating(movie, rating);
-        System.out.println("Added rating: " + rating + " for movie: " + movie);
+        System.out.println("Dodano: " + rating + " dla filmu: " + movie);
     }
 }

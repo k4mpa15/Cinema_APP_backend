@@ -14,7 +14,7 @@ public class LoginController {
     private final String correctPassword = "haslomaslo";
     @CrossOrigin(origins = "*")
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam String username, @RequestParam String password) {
+    public ResponseEntity<String> loginUSer(@RequestParam String username, @RequestParam String password) {
         if (username.equals(correctUsername) && password.equals(correctPassword)) {
             String token = JwtUtil.generateToken(username);
             System.out.println("okok"); //dodamy tu sprawdzenie z baza - na razie sprawdzam zmienne na sztywno

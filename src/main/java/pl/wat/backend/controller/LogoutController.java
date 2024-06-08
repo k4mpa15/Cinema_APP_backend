@@ -14,7 +14,7 @@ public class LogoutController {
     private TokenService tokenService;
 
     @PostMapping("/logout")
-    public String logout(@RequestParam String token) {
+    public String logoutUser(@RequestParam String token) {
 
         System.out.println("token: " + token);
         tokenService.invalidateToken(token);

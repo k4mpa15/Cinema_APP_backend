@@ -14,7 +14,7 @@ public class TicketController {
     private TicketService TicketService;
 
     @GetMapping("/prices/ticket")
-    public Map<String, String> Ticket() {
+    public Map<String, String> generateticketprices() {
         System.out.println(TicketService.generatePrices());
         return TicketService.generatePrices();
     }

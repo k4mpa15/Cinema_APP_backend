@@ -26,9 +26,9 @@ public class UserRatingsService {
         Map<String, Map<String, String>> ratingsMap = new LinkedHashMap<>();
         for (int i = 0; i < movieRatings.size(); i++) {
             Map<String, String> ratingDetails = new LinkedHashMap<>();
-            ratingDetails.put("name", movieRatings.get(i).getName());
-            ratingDetails.put("rating", String.valueOf(movieRatings.get(i).getRating()));
-            ratingDetails.put("dateAdded", movieRatings.get(i).getDateAdded().toString());
+            ratingDetails.put("nazwa", movieRatings.get(i).getName());
+            ratingDetails.put("ocena", String.valueOf(movieRatings.get(i).getRating()));
+            ratingDetails.put("data", movieRatings.get(i).getDateAdded().toString());
             ratingsMap.put(String.valueOf(i + 1), ratingDetails);
         }
         return ratingsMap;

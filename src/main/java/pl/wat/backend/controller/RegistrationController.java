@@ -11,18 +11,18 @@ public class RegistrationController {
 
     private String email;
     private String password;
-    private String imie;
-    private String nazwisko;
-    private String nr_tel;
+    private String name;
+    private String surname;
+    private String phone;
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(
             @RequestParam String email,
             @RequestParam String password,
             @RequestParam String confirmPassword,
-            @RequestParam String imie,
-            @RequestParam String nazwisko,
-            @RequestParam String nr_tel
+            @RequestParam String name,
+            @RequestParam String surname,
+            @RequestParam String phone
     ) {
         if (!password.equals(confirmPassword)) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Hasła nie pasują do siebie.");
@@ -30,9 +30,9 @@ public class RegistrationController {
 
         this.email = email;
         this.password = password;
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.nr_tel = nr_tel;
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
 
         return ResponseEntity.status(HttpStatus.CREATED).body("Użytkownik zarejestrowany pomyślnie.");
     }

@@ -2,22 +2,32 @@ package pl.wat.backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pl.wat.backend.services.TokenService;
+
+import jakarta.servlet.http.HttpSession;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 @RestController
 public class LogoutController {
 
-    @Autowired
-    private TokenService tokenService;
-
     @PostMapping("/logout")
-    public String logoutUser(@RequestParam String token) {
+    public String logoutUser() {
+        removeAllEmailsFromFile();
 
-        System.out.println("token: " + token);
-        tokenService.invalidateToken(token);
         return "Wylogowano pomyślnie.";
     }
+    private void removeAllEmailsFromFile() {
+        try (FileWriter fw = new FileWriter("users.txt", false);
+             BufferedWriter bw = new BufferedWriter(fw);
+             PrintWriter out = new PrintWriter(bw)) {
+            out.print("");
+        } catch (IOException e) {
+            System.err.println("Błąd podczas usuwania zawartości pliku: " + e.getMessage());
+        }
+    }
+
 }

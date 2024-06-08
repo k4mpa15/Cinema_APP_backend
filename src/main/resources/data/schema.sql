@@ -11,6 +11,14 @@ email VARCHAR(255),
 name VARCHAR(255),
 surname VARCHAR(255),
 password_hash VARCHAR(255),
-phone VARCHAR(255)
+phone VARCHAR(255),
+points INT
 );
+
+CREATE TABLE Ratings (
+id BIGINT AUTO_INCREMENT PRIMARY KEY
+email VARCHAR(255),
+movie VARCHAR(255),
+rating VARCHAR(255),
+)
 mvn spring-boot:run

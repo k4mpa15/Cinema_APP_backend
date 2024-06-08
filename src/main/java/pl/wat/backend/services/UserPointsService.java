@@ -7,35 +7,70 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import pl.wat.backend.entity.User;
+import pl.wat.backend.repository.UserRepository;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 @Service
 public class UserPointsService {
 
+    private UserRepository userRepository;
     private int points;
 
-    public UserPointsService() {
-        this.points = 0; // Początkowa liczba punktów
+    @Autowired
+    public UserPointsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+        this.points = 0;
     }
 
     public String getPoints() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, String> response = new HashMap<>();
-        response.put("punkty", String.valueOf(points));
-
-        try {
-            return objectMapper.writeValueAsString(response);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
+        String email = readEmailFromFile();
+        if (email == null) {
             return "{}";
         }
+
+        User user = userRepository.findByEmail(email);
+        if (user == null) {
+            return "{}";
+        }
+
+        return String.valueOf(user.getPoints());
     }
 
-    public void addPoints(int points) {
-        if (points > 0) {
-            this.points += points;
+    public void addPoints(int pointsToAdd) {
+        String email = readEmailFromFile();
+        if (email != null) {
+            User user = userRepository.findByEmail(email);
+            if (user != null) {
+
+                user.addPoints(pointsToAdd);
+                userRepository.save(user);
+            }
         }
     }
 
     public void resetPoints() {
-        this.points = 0;
+        String email = readEmailFromFile();
+        if (email != null) {
+            User user = userRepository.findByEmail(email);
+            if (user != null) {
+                user.addPoints(0);
+                userRepository.save(user);
+            }
+        }
+    }
+
+    private String readEmailFromFile() {
+        try (BufferedReader br = new BufferedReader(new FileReader("users.txt"))) {
+            return br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

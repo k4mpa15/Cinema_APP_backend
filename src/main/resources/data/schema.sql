@@ -28,4 +28,43 @@ CREATE TABLE MovieHistory (
     name VARCHAR(255),
     date_added TIMESTAMP
 );
+CREATE TABLE Sala (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT,
+    nr_krzeselka INT,
+    data DATE,
+    godzina TIME,
+    zajete BOOLEAN,
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
+CREATE TABLE Tickets (
+    ticket_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT,
+    seat_number INT,
+    purchase_date TIMESTAMP,
+    ticket_type VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
+CREATE TABLE Repertuar (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    movie_name VARCHAR(255),
+    show_date DATE,
+    show_time TIME,
+    duration INT,
+    rating INT
+);
+
+CREATE TABLE Bilety (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    ticket_type VARCHAR(255),
+    price DOUBLE
+);
+
+CREATE TABLE Giftcards (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    giftcard_type VARCHAR(255),
+    price DOUBLE
+);
 mvn spring-boot:run

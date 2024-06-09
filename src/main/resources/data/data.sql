@@ -38,8 +38,8 @@ INSERT INTO Sala (user_id, nr_krzeselka, data, godzina, zajete) VALUES
 INSERT INTO Tickets (user_id, seat_number, purchase_date, ticket_type) VALUES 
 (1, 1, '2024-06-09 14:00:00', 'Normalny'),
 (2, 2, '2024-06-09 15:30:00', 'Ulgowy'),
-(3, 3, '2024-06-09 17:00:00', 'Grupowy'),
-(4, 4, '2024-06-09 18:30:00', 'Studencki');
+(3, 3, '2024-06-09 17:00:00', 'DLa seniora'),
+(4, 4, '2024-06-09 18:30:00', 'Dzieciecy');
 
 -- Wstawianie do tabeli Repertuar
 INSERT INTO Repertuar (movie_name, show_date, show_time, duration, rating) VALUES 
@@ -50,14 +50,14 @@ INSERT INTO Repertuar (movie_name, show_date, show_time, duration, rating) VALUE
 
 -- Wstawianie do tabeli Bilety
 INSERT INTO Bilety (ticket_type, price) VALUES 
-('Normalny', 15.0),
-('Ulgowy', 10.0),
-('Grupowy', 8.0),
-('Studencki', 12.0);
+('Normalny', 30.0),
+('Ulgowy', 20.0),
+('Dla seniora', 25.0),
+('Dzieciecy', 15.0);
 
 -- Wstawianie do tabeli Giftcards
 INSERT INTO Giftcards (giftcard_type, price) VALUES 
-('Standard', 25.0),
-('Premium', 50.0),
-('Gold', 75.0),
-('Platinum', 100.0);
+('Standardowa', 50.0),
+('VIP', 100.0),
+('Dla dzieci', 25.0),
+('Dla seniora', 30.0);

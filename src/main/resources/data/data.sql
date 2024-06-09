@@ -45,8 +45,8 @@ INSERT INTO Tickets (user_id, seat_number, purchase_date, ticket_type) VALUES
 INSERT INTO Repertuar (movie_name, show_date, show_time, duration, rating) VALUES 
 ('Challengers', '2024-06-09', '15:00:00', 120, 7),
 ('Furiosa Saga Mad Max', '2024-06-09', '18:00:00', 130, 8),
-('Garfield', '2024-06-10', '13:00:00', 90, 6),
-('BAD BOYS: RIDE OR DIE', '2024-06-10', '20:00:00', 110, 7);
+('Garfield', '2024-06-09', '13:00:00', 90, 6),
+('BAD BOYS: RIDE OR DIE', '2024-06-09', '21:00:00', 110, 7);
 
 -- Wstawianie do tabeli Bilety
 INSERT INTO Bilety (ticket_type, price) VALUES 

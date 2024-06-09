@@ -1,6 +1,6 @@
-package pl.wat.backend.model;
+package pl.wat.backend.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Bilety")

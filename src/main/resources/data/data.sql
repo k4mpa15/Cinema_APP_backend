@@ -14,21 +14,21 @@ INSERT INTO Users (email, name, surname, password_hash, phone, points) VALUES
 ('jan.kowalski@example.com', 'Jan', 'Kowalski', '0dee3eaf26a48e6447042f7beb357e9780452bb85eebb3f550fe32a775779865', '345654345', 10);
 
 -- Wstawianie do tabeli MovieRating
-INSERT INTO MovieRating (email, name, rating, date_added) VALUES
+INSERT INTO Movie_Rating (email, name, rating, date_added) VALUES
 ('john.doe@example.com', 'Incepcja', 5, CURRENT_TIMESTAMP),
 ('john.doe@example.com', 'Interstellar', 4, CURRENT_TIMESTAMP),
 ('jane.smith@example.com', 'Matrix', 5, CURRENT_TIMESTAMP),
 ('jane.smith@example.com', 'Avengers: Koniec gry', 4, CURRENT_TIMESTAMP);
 
 -- Wstawianie do tabeli MovieHistory
-INSERT INTO MovieHistory (email, name, date_added) VALUES
+INSERT INTO Movie_History (email, name, date_added) VALUES
 ('john.doe@example.com', 'Incepcja',  CURRENT_TIMESTAMP),
 ('john.doe@example.com', 'Interstellar', CURRENT_TIMESTAMP),
 ('jane.smith@example.com', 'Matrix',  CURRENT_TIMESTAMP),
 ('jane.smith@example.com', 'Avengers: Koniec gry', CURRENT_TIMESTAMP);
 
 -- Wstawianie do tabeli Sala
-INSERT INTO Sala (user_id, nr_krzeselka, data, godzina, zajete) VALUES 
+INSERT INTO Sala (user_id, nr_krzeselka, data, godzina, zajete) VALUES
 (1, 1, '2024-06-09', '15:00:00', TRUE),
 (2, 2, '2024-06-09', '17:00:00', FALSE),
 (3, 3, '2024-06-09', '19:00:00', TRUE),
@@ -42,7 +42,7 @@ INSERT INTO Tickets (user_id, seat_number, purchase_date, ticket_type) VALUES
 (4, 4, '2024-06-09 18:30:00', 'Dzieciecy');
 
 -- Wstawianie do tabeli Repertuar
-INSERT INTO Repertuar (movie_name, show_date, show_time, duration, rating) VALUES 
+INSERT INTO Repertuar (movie_name, show_date, show_time, duration, rating) VALUES
 ('Challengers', '2024-06-09', '15:00:00', 120, 7),
 ('Furiosa Saga Mad Max', '2024-06-09', '18:00:00', 130, 8),
 ('Garfield', '2024-06-09', '13:00:00', 90, 6),
@@ -56,7 +56,7 @@ INSERT INTO Bilety (ticket_type, price) VALUES
 ('Dzieciecy', 15.0);
 
 -- Wstawianie do tabeli Giftcards
-INSERT INTO Giftcards (giftcard_type, price) VALUES 
+INSERT INTO Giftcards (giftcard_type, price) VALUES
 ('Standardowa', 50.0),
 ('VIP', 100.0),
 ('Dla dzieci', 25.0),

@@ -2,7 +2,7 @@ package pl.wat.backend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.wat.backend.model.Bilety;
+import pl.wat.backend.entity.Bilety;
 import pl.wat.backend.repository.BiletyRepository;
 
 import java.util.HashMap;

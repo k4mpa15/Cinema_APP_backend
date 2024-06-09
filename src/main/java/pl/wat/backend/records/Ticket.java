@@ -1,4 +1,4 @@
 package pl.wat.backend.records;
 
-public record  Ticket(String name, String price) {
+public record Ticket(String userId, int seatNumber, String purchaseDate, String ticketType) {
 }

@@ -11,11 +11,10 @@ import java.util.Map;
 public class TicketController {
 
     @Autowired
-    private TicketService TicketService;
+    private TicketService ticketService;
 
     @GetMapping("/prices/ticket")
-    public Map<String, String> generateticketprices() {
-        System.out.println(TicketService.generatePrices());
-        return TicketService.generatePrices();
+    public Map<String, Double> getTicketPrices() {
+        return ticketService.getTicketPrices();
     }
 }

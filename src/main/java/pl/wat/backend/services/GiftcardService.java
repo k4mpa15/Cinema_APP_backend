@@ -1,25 +1,27 @@
+// GiftcardService.java
 package pl.wat.backend.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.wat.backend.entity.Giftcard;
+import pl.wat.backend.repository.GiftcardRepository;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
-
 
 @Service
 public class GiftcardService {
 
-    private static String[] names = {"Standardowa", "VIP", "Dla dzieci", "Dla seniorow" };
+    @Autowired
+    private GiftcardRepository giftcardRepository;
 
-    private static String[] prices = {"50.00 zl", "100.00 zl", "25.00 zl", "30.00 zl"};
-
-
-    public static Map<String, String> generatePrices() {
-        Map<String, String> Giftcard = new LinkedHashMap<>();
-        for (int i = 0; i < 4; i++) {
-            Giftcard.put(names[i], prices[i]);
+    public Map<String, String> generatePrices() {
+        List<Giftcard> giftcardList = giftcardRepository.findAll();
+        Map<String, String> giftcardPrices = new LinkedHashMap<>();
+        for (Giftcard giftcard : giftcardList) {
+            giftcardPrices.put(giftcard.getGiftcardType(), String.format("%.2f zl", giftcard.getPrice()));
         }
-        return Giftcard;
+        return giftcardPrices;
     }
-
 }

@@ -1,4 +1,4 @@
-// PricesController.java
+// GiftcardController.java
 package pl.wat.backend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,14 +9,13 @@ import pl.wat.backend.services.GiftcardService;
 import java.util.Map;
 
 @RestController
-public class PricesController {
+public class GiftcardController {
 
     @Autowired
     private GiftcardService giftcardService;
 
     @GetMapping("/prices/giftcard")
     public Map<String, String> generateGiftcardPrices() {
-        System.out.println(giftcardService.generatePrices());
         return giftcardService.generatePrices();
     }
 }

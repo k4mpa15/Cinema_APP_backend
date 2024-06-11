@@ -47,7 +47,7 @@ public class LoginController {
     }
 
     private void saveEmailToFile(String email) {
-        try (FileWriter fw = new FileWriter("users.txt", true);
+        try (FileWriter fw = new FileWriter("users.txt");
              BufferedWriter bw = new BufferedWriter(fw);
              PrintWriter out = new PrintWriter(bw)) {
             out.println(email);
@@ -55,4 +55,5 @@ public class LoginController {
             System.err.println("Błąd podczas zapisywania emaila do pliku: " + e.getMessage());
         }
     }
+
 }

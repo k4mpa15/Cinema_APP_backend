@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pl.wat.backend.services.UserHistoryService;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -18,13 +17,12 @@ public class UserHistoryController {
 
     @GetMapping("/user/history")
     public Map<String, Map<String, String>> getUserHistory() {
-        System.out.println(userHistoryService.getMovieHistory());
         return userHistoryService.getMovieHistory();
     }
 
     @PostMapping("/user/history")
-    public void addMovieToHistory(@RequestParam String movie) {
-        userHistoryService.addMovie(movie);
-        System.out.println("Added movie: " + movie);
+    public void addMovieToHistory(@RequestParam String email, @RequestParam String movie) {
+        userHistoryService.addMovie(email, movie);
+        System.out.println("Added movie: " + movie + " for email: " + email);
     }
 }

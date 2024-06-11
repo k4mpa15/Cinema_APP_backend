@@ -16,11 +16,11 @@ public class BiletyService {
     @Autowired
     private BiletyRepository biletyRepository;
 
-    public Map<String, String> getTicketPrices() {
+    public Map<String, Double> generatePrices() {
         List<Bilety> biletyList = biletyRepository.findAll();
-        Map<String, String> ticketPrices = new LinkedHashMap<>();
+        Map<String, Double> ticketPrices = new LinkedHashMap<>();
         for (Bilety bilety : biletyList) {
-            ticketPrices.put(bilety.getTicketType(), String.format("%.2f zl", bilety.getPrice()));
+            ticketPrices.put(bilety.getTicketType(), bilety.getPrice());
         }
         return ticketPrices;
     }

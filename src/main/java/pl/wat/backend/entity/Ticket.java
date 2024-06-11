@@ -1,7 +1,7 @@
 package pl.wat.backend.entity;
 
 import jakarta.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Tickets")
@@ -11,19 +11,21 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id")
-    private Long userId;
+    @Column(name = "user_mail")
+    private String user_mail;
 
     @Column(name = "seat_number")
     private int seatNumber;
 
     @Column(name = "purchase_date")
-    private Date purchaseDate;
+    private LocalDateTime purchaseDate;
 
     @Column(name = "ticket_type")
     private String ticketType;
 
-    // Getters and setters
+    @Column(name = "movie")
+    private String movie;
+
     public Long getId() {
         return id;
     }
@@ -32,12 +34,11 @@ public class Ticket {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public void setUser_mail(String user_mail) {
+        this.user_mail = user_mail;
     }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public String getUser_mail(){
+        return this.user_mail;
     }
 
     public int getSeatNumber() {
@@ -48,11 +49,11 @@ public class Ticket {
         this.seatNumber = seatNumber;
     }
 
-    public Date getPurchaseDate() {
+    public LocalDateTime getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(Date purchaseDate) {
+    public void setPurchaseDate(LocalDateTime purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 
@@ -62,5 +63,13 @@ public class Ticket {
 
     public void setTicketType(String ticketType) {
         this.ticketType = ticketType;
+    }
+
+    public String getMovie() {
+        return movie;
+    }
+
+    public void setMovie(String movie) {
+        this.movie = movie;
     }
 }

@@ -15,7 +15,7 @@ public class GiftcardController {
     private GiftcardService giftcardService;
 
     @GetMapping("/prices/giftcard")
-    public Map<String, String> generateGiftcardPrices() {
+    public Map<String, Double> generateGiftcardPrices() {
         System.out.println(giftcardService.generatePrices());
         return giftcardService.generatePrices();
     }

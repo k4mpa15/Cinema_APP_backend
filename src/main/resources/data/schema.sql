@@ -15,13 +15,6 @@ phone VARCHAR(255),
 points INT
 );
 
-CREATE TABLE MovieRating (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255),
-    name VARCHAR(255),
-    rating INT,
-    date_added TIMESTAMP
-);
 CREATE TABLE MovieHistory (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255),
@@ -40,11 +33,11 @@ CREATE TABLE Sala (
 
 CREATE TABLE Tickets (
     ticket_id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    user_id BIGINT,
+    user_mail VARCHAR(255),
     seat_number INT,
     purchase_date TIMESTAMP,
     ticket_type VARCHAR(255),
-    FOREIGN KEY (user_id) REFERENCES Users(id)
+    movie VARCHAR(255)
 );
 
 CREATE TABLE Repertuar (

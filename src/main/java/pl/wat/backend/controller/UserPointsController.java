@@ -22,15 +22,16 @@ public class UserPointsController {
         return new ResponseEntity<>(pointsJson, HttpStatus.OK);
     }
 
-    @PostMapping("/user/points/add")
-    public void addUserPoints(@RequestParam int points) {
-        userPointsService.addPoints(points);
-        System.out.println("Added points: " + points + ", Total points: " + userPointsService.getPoints());
-    }
+
 
     @PostMapping("/user/points/reset")
     public void resetUserPoints() {
         userPointsService.resetPoints();
         System.out.println("Points have been reset. Total points: " + userPointsService.getPoints());
+    }
+    @GetMapping("/user/points/add")
+    public ResponseEntity<String> add10PointsToCurrentUser() {
+        userPointsService.addPoints(10);
+        return new ResponseEntity<>("Added 10 points to the current user", HttpStatus.OK);
     }
 }

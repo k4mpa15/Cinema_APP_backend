@@ -16,11 +16,11 @@ public class GiftcardService {
     @Autowired
     private GiftcardRepository giftcardRepository;
 
-    public Map<String, String> generatePrices() {
+    public Map<String, Double> generatePrices() {
         List<Giftcard> giftcardList = giftcardRepository.findAll();
-        Map<String, String> giftcardPrices = new LinkedHashMap<>();
+        Map<String, Double> giftcardPrices = new LinkedHashMap<>();
         for (Giftcard giftcard : giftcardList) {
-            giftcardPrices.put(giftcard.getGiftcardType(), String.format("%.2f zl", giftcard.getPrice()));
+            giftcardPrices.put(giftcard.getGiftcardType(), giftcard.getPrice());
         }
         return giftcardPrices;
     }

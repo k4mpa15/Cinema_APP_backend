@@ -13,12 +13,6 @@ INSERT INTO Users (email, name, surname, password_hash, phone, points) VALUES
 ('daniel.brown@example.com', 'Daniel', 'Brown', '0dee3eaf26a48e6447042f7beb357e9780452bb85eebb3f550fe32a775779865', '333444555', 50),
 ('jan.kowalski@example.com', 'Jan', 'Kowalski', '0dee3eaf26a48e6447042f7beb357e9780452bb85eebb3f550fe32a775779865', '345654345', 10);
 
--- Wstawianie do tabeli MovieRating
-INSERT INTO Movie_Rating (email, name, rating, date_added) VALUES
-('john.doe@example.com', 'Incepcja', 5, CURRENT_TIMESTAMP),
-('john.doe@example.com', 'Interstellar', 4, CURRENT_TIMESTAMP),
-('jane.smith@example.com', 'Matrix', 5, CURRENT_TIMESTAMP),
-('jane.smith@example.com', 'Avengers: Koniec gry', 4, CURRENT_TIMESTAMP);
 
 -- Wstawianie do tabeli MovieHistory
 INSERT INTO Movie_History (email, name, date_added) VALUES
@@ -28,18 +22,18 @@ INSERT INTO Movie_History (email, name, date_added) VALUES
 ('jane.smith@example.com', 'Avengers: Koniec gry', CURRENT_TIMESTAMP);
 
 -- Wstawianie do tabeli Sala
-INSERT INTO Sala (user_id, nr_krzeselka, data, godzina, zajete) VALUES
-(1, 1, '2024-06-09', '15:00:00', TRUE),
-(2, 2, '2024-06-09', '17:00:00', FALSE),
-(3, 3, '2024-06-09', '19:00:00', TRUE),
-(4, 4, '2024-06-09', '21:00:00', FALSE);
+--INSERT INTO Sala (user_id, nr_krzeselka, data, godzina, zajete) VALUES
+--(1, 1, '2024-06-09', '15:00:00', TRUE),
+--(2, 2, '2024-06-09', '17:00:00', FALSE),
+--(3, 3, '2024-06-09', '19:00:00', TRUE),
+--(4, 4, '2024-06-09', '21:00:00', FALSE);
 
 -- Wstawianie do tabeli Tickets
-INSERT INTO Tickets (user_id, seat_number, purchase_date, ticket_type) VALUES 
-(1, 1, '2024-06-09 14:00:00', 'Normalny'),
-(2, 2, '2024-06-09 15:30:00', 'Ulgowy'),
-(3, 3, '2024-06-09 17:00:00', 'DLa seniora'),
-(4, 4, '2024-06-09 18:30:00', 'Dzieciecy');
+INSERT INTO Tickets (user_mail, purchase_date, seat_number, ticket_type, movie) VALUES
+('john.doe@example.com', '2024-06-09 14:00:00',1 ,'Normalny', 'Interstellar'),
+('jane.smith@example.com', '2024-06-09 15:30:00',1 , 'Ulgowy', 'Interstellar 2'),
+('john.doe@example.com', '2024-06-09 17:00:00',1 ,'DLa seniora', 'Interstellar 3'),
+('jane.smith@example.com', '2024-06-09 18:30:00',1 , 'Dzieciecy', 'Interstellar 4');
 
 -- Wstawianie do tabeli Repertuar
 INSERT INTO Repertuar (movie_name, show_date, show_time, duration, rating) VALUES

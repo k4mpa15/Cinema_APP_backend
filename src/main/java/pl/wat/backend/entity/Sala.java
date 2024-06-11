@@ -18,7 +18,7 @@ public class Sala {
     @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL)
     private List<Seat> seats;
 
-    // Getters and setters
+    // Gettery i settery
     public Long getId() {
         return id;
     }

@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.wat.backend.dto.SalaDTO;
 import pl.wat.backend.entity.Sala;
-import pl.wat.backend.entity.Seat;
 import pl.wat.backend.repository.SalaRepository;
 
 import java.util.List;
@@ -20,10 +19,13 @@ public class SalaService {
         this.salaRepository = salaRepository;
     }
 
-    public List<SalaDTO> getAllSalas() {
-        List<Sala> salas = salaRepository.findAll();
-        return salas.stream()
-                .map(sala -> new SalaDTO(sala.getSalaNumber(), sala.getSeats().stream().map(Seat::getSeatNumber).collect(Collectors.toList())))
+    public List<SalaDTO> occupiedSeats(String movie) {
+        List<Sala> zajeteMiejsca = salaRepository.findByMovie(movie);
+
+        List<SalaDTO> zajeteMiejscaDTO = zajeteMiejsca.stream()
+                .map(sala -> new SalaDTO(sala.getNrKrzeselka(), sala.getMovie()))
                 .collect(Collectors.toList());
+
+        return zajeteMiejscaDTO;
     }
 }

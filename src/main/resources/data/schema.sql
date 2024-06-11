@@ -23,12 +23,8 @@ CREATE TABLE MovieHistory (
 );
 CREATE TABLE Sala (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    user_id BIGINT,
     nr_krzeselka INT,
-    data DATE,
-    godzina TIME,
-    zajete BOOLEAN,
-    FOREIGN KEY (user_id) REFERENCES Users(id)
+    movie VARCHAR(255),
 );
 
 CREATE TABLE Tickets (

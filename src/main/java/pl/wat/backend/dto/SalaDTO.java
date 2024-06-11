@@ -4,29 +4,28 @@ import java.util.List;
 
 public class SalaDTO {
 
-    private int salaNumber;
-    private List<Integer> seatNumbers;
+    private int SeatNumber;
+    private String movie;
 
-    // Konstruktor dla danych związanych z miejscami
-    public SalaDTO(int salaNumber, List<Integer> seatNumbers) {
-        this.salaNumber = salaNumber;
-        this.seatNumbers = seatNumbers;
+    public SalaDTO(int salaNumber, String seatNumbers) {
+        this.SeatNumber = salaNumber;
+        this.movie = seatNumbers;
     }
 
     // Gettery i Settery
-    public int getSalaNumber() {
-        return salaNumber;
+    public int getSeatNumber() {
+        return SeatNumber;
     }
 
-    public void setSalaNumber(int salaNumber) {
-        this.salaNumber = salaNumber;
+    public void setSeatNumber(int SeatNumber) {
+        this.SeatNumber = SeatNumber;
     }
 
-    public List<Integer> getSeatNumbers() {
-        return seatNumbers;
+    public String getmovie() {
+        return movie;
     }
 
-    public void setSeatNumbers(List<Integer> seatNumbers) {
-        this.seatNumbers = seatNumbers;
+    public void setmovie(List<Integer> movie) {
+        this.movie = movie.toString();
     }
 }

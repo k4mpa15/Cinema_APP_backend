@@ -1,7 +1,5 @@
 package pl.wat.backend.entity;
-
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "Sala")
@@ -9,16 +7,26 @@ public class Sala {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "sala_id")
     private Long id;
 
-    @Column(name = "sala_number")
-    private int salaNumber;
+    @Column(name = "nr_krzeselka")
+    private int nrKrzeselka;
 
-    @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL)
-    private List<Seat> seats;
+    @Column(name = "movie")
+    private String movie;
+
+    // Konstruktory, gettery i settery
+
+    public Sala() {
+    }
+
+    public Sala(int nrKrzeselka, String movie) {
+        this.nrKrzeselka = nrKrzeselka;
+        this.movie = movie;
+    }
 
     // Gettery i settery
+
     public Long getId() {
         return id;
     }
@@ -27,19 +35,19 @@ public class Sala {
         this.id = id;
     }
 
-    public int getSalaNumber() {
-        return salaNumber;
+    public int getNrKrzeselka() {
+        return nrKrzeselka;
     }
 
-    public void setSalaNumber(int salaNumber) {
-        this.salaNumber = salaNumber;
+    public void setNrKrzeselka(int nrKrzeselka) {
+        this.nrKrzeselka = nrKrzeselka;
     }
 
-    public List<Seat> getSeats() {
-        return seats;
+    public String getMovie() {
+        return movie;
     }
 
-    public void setSeats(List<Seat> seats) {
-        this.seats = seats;
+    public void setMovie(String movie) {
+        this.movie = movie;
     }
 }

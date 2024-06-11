@@ -22,11 +22,11 @@ INSERT INTO Movie_History (email, name, date_added) VALUES
 ('jane.smith@example.com', 'Avengers: Koniec gry', CURRENT_TIMESTAMP);
 
 -- Wstawianie do tabeli Sala
---INSERT INTO Sala (user_id, nr_krzeselka, data, godzina, zajete) VALUES
---(1, 1, '2024-06-09', '15:00:00', TRUE),
---(2, 2, '2024-06-09', '17:00:00', FALSE),
---(3, 3, '2024-06-09', '19:00:00', TRUE),
---(4, 4, '2024-06-09', '21:00:00', FALSE);
+INSERT INTO Sala (nr_krzeselka, movie) VALUES
+(1, 'Garfield'),
+(2, 'BAD BOYS: RIDE OR DIE'),
+(3, 'BAD BOYS: RIDE OR DIE'),
+(4, 'BAD BOYS: RIDE OR DIE');
 
 -- Wstawianie do tabeli Tickets
 INSERT INTO Tickets (user_mail, purchase_date, seat_number, ticket_type, movie) VALUES

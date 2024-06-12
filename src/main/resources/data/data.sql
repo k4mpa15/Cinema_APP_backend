@@ -22,7 +22,7 @@ INSERT INTO Movie_History (email, name, date_added) VALUES
 ('jane.smith@example.com', 'Avengers: Koniec gry', CURRENT_TIMESTAMP);
 
 -- Wstawianie do tabeli Sala
-INSERT INTO ScreenRoom (nr_krzeselka, movie) VALUES
+INSERT INTO Screen_Room (nr_krzeselka, movie) VALUES
 (1, 'Garfield'),
 (2, 'BAD BOYS RIDE OR DIE'),
 (3, 'BAD BOYS RIDE OR DIE'),
@@ -37,13 +37,13 @@ INSERT INTO Tickets (user_mail, purchase_date, seat_number, ticket_type, movie) 
 
 -- Wstawianie do tabeli Repertuar
 INSERT INTO Programme (movie_name, show_date, show_time, duration, rating) VALUES
-('Challengers', '2024-06-09', '15:00:00', 120, 7),
-('Furiosa Saga Mad Max', '2024-06-09', '18:00:00', 130, 8),
-('Garfield', '2024-06-09', '13:00:00', 90, 6),
-('BAD BOYS RIDE OR DIE', '2024-06-09', '21:00:00', 110, 7);
+('Challengers', '2024-06-14', '15:00:00', 120, 7),
+('Furiosa Saga Mad Max', '2024-06-14', '18:00:00', 130, 8),
+('Garfield', '2024-06-14', '13:00:00', 90, 6),
+('BAD BOYS RIDE OR DIE', '2024-06-14', '21:00:00', 110, 7);
 
 -- Wstawianie do tabeli TicketType
-INSERT INTO TicketType (ticket_type, price) VALUES
+INSERT INTO Ticket_Type (ticket_type, price) VALUES
 ('Normalny', 30.0),
 ('Ulgowy', 20.0),
 ('Dla seniora', 25.0),

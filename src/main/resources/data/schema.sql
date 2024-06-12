@@ -21,7 +21,7 @@ CREATE TABLE MovieHistory (
     name VARCHAR(255),
     date_added TIMESTAMP
 );
-CREATE TABLE ScrenRoom (
+CREATE TABLE ScreenRoom (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nr_krzeselka INT,
     movie VARCHAR(255),
@@ -45,7 +45,7 @@ CREATE TABLE Programme (
     rating INT
 );
 
-CREATE TABLE TicketType(
+CREATE TABLE Ticket_Type(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     ticket_type VARCHAR(255),
     price DOUBLE

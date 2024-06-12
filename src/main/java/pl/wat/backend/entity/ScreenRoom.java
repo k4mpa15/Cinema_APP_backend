@@ -2,7 +2,7 @@ package pl.wat.backend.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Sala")
+@Table(name = "Screen_Room")
 public class ScreenRoom {
 
     @Id

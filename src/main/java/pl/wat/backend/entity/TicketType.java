@@ -3,7 +3,7 @@ package pl.wat.backend.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Bilety")
+@Table(name = "Ticket_type")
 public class TicketType {
 
     @Id

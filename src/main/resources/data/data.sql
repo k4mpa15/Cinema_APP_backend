@@ -24,9 +24,9 @@ INSERT INTO Movie_History (email, name, date_added) VALUES
 -- Wstawianie do tabeli Sala
 INSERT INTO Sala (nr_krzeselka, movie) VALUES
 (1, 'Garfield'),
-(2, 'BAD BOYS: RIDE OR DIE'),
-(3, 'BAD BOYS: RIDE OR DIE'),
-(4, 'BAD BOYS: RIDE OR DIE');
+(2, 'BAD BOYS RIDE OR DIE'),
+(3, 'BAD BOYS RIDE OR DIE'),
+(4, 'BAD BOYS RIDE OR DIE');
 
 -- Wstawianie do tabeli Tickets
 INSERT INTO Tickets (user_mail, purchase_date, seat_number, ticket_type, movie) VALUES
@@ -40,7 +40,7 @@ INSERT INTO Repertuar (movie_name, show_date, show_time, duration, rating) VALUE
 ('Challengers', '2024-06-09', '15:00:00', 120, 7),
 ('Furiosa Saga Mad Max', '2024-06-09', '18:00:00', 130, 8),
 ('Garfield', '2024-06-09', '13:00:00', 90, 6),
-('BAD BOYS: RIDE OR DIE', '2024-06-09', '21:00:00', 110, 7);
+('BAD BOYS RIDE OR DIE', '2024-06-09', '21:00:00', 110, 7);
 
 -- Wstawianie do tabeli Bilety
 INSERT INTO Bilety (ticket_type, price) VALUES 

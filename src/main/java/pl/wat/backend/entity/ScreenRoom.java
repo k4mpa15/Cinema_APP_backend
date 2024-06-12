@@ -3,7 +3,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Sala")
-public class Sala {
+public class ScreenRoom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,10 +17,10 @@ public class Sala {
 
     // Konstruktory, gettery i settery
 
-    public Sala() {
+    public ScreenRoom() {
     }
 
-    public Sala(int nrKrzeselka, String movie) {
+    public ScreenRoom(int nrKrzeselka, String movie) {
         this.nrKrzeselka = nrKrzeselka;
         this.movie = movie;
     }

@@ -36,7 +36,7 @@ CREATE TABLE Tickets (
     movie VARCHAR(255)
 );
 
-CREATE TABLE Repertuar (
+CREATE TABLE Programme (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     movie_name VARCHAR(255),
     show_date DATE,
@@ -45,7 +45,7 @@ CREATE TABLE Repertuar (
     rating INT
 );
 
-CREATE TABLE Bilety (
+CREATE TABLE TicketType(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     ticket_type VARCHAR(255),
     price DOUBLE

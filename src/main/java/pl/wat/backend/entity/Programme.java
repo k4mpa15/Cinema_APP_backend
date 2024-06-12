@@ -7,7 +7,7 @@ import java.time.LocalTime;
 
 @Entity
 @Table(name = "Repertuar")
-public class Repertuar {
+public class Programme {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

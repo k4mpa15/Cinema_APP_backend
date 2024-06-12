@@ -4,11 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.wat.backend.entity.MovieHistory;
-import pl.wat.backend.entity.Sala;
 import pl.wat.backend.entity.Ticket;
 import pl.wat.backend.entity.User;
 import pl.wat.backend.repository.MovieHistoryRepository;
-import pl.wat.backend.repository.SalaRepository;
+import pl.wat.backend.repository.ScreenRoom;
 import pl.wat.backend.repository.TicketsRepository;
 import pl.wat.backend.repository.UserRepository;
 
@@ -21,7 +20,7 @@ public class TicketService {
     @Autowired
     private MovieHistoryRepository movieHistoryRepository;
     @Autowired
-    private SalaRepository salaRepository;
+    private ScreenRoom screenRoom;
 
     @Autowired
     private UserRepository userRepository;
@@ -40,11 +39,11 @@ public class TicketService {
     private void addMovieToSala(Ticket savedTicket) {
         System.out.println(savedTicket.getSeatNumber());
         System.out.println(savedTicket.getMovie());
-            Sala sala = new Sala();
-            sala.setNrKrzeselka(savedTicket.getSeatNumber());
-            sala.setMovie(savedTicket.getMovie());
+            pl.wat.backend.entity.ScreenRoom screenRoom = new pl.wat.backend.entity.ScreenRoom();
+            screenRoom.setNrKrzeselka(savedTicket.getSeatNumber());
+            screenRoom.setMovie(savedTicket.getMovie());
 
-            salaRepository.save(sala);
+            this.screenRoom.save(screenRoom);
     }
 
     private void addMovieHistory(Ticket ticket) {

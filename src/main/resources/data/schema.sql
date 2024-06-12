@@ -21,7 +21,7 @@ CREATE TABLE MovieHistory (
     name VARCHAR(255),
     date_added TIMESTAMP
 );
-CREATE TABLE Sala (
+CREATE TABLE ScrenRoom (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nr_krzeselka INT,
     movie VARCHAR(255),
